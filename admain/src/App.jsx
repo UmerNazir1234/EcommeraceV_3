@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
-import Navebar from './components/navebar'
+import Navebar from './components/Navebar'
+//import Navebar from './components/navebar'
 import Sidebar from './components/Sidebar'
 import { Routes,Route } from 'react-router-dom'
 import Add from './pages/Add'
