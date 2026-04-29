@@ -13,7 +13,7 @@ const ShopContextProvider = (props) => {
   const backendUrl=import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
   const [search,setsearch] = useState('');
   const [showsearch, setshowsearch] = useState(false);
-  const [cartitems,setcartitem]= useState({}); //const [cartitems, setcartitem] = useState({});
+  const [cartitems,setcartitem]= useState({}); 
   const [products,setproducts] = useState([]);
   const [token ,settoken] = useState('');
   const navigate = useNavigate();
@@ -44,9 +44,9 @@ const addTocart = async (itemId, size) => {
   if (token) {
     try {
       const { data } = await axios.post(
-        backendUrl + '/cart/add',   // ✅ include `/cart`
+        backendUrl + '/cart/add',   
         { itemId, size },
-        { headers: { token } }      // ✅ send raw token
+        { headers: { token } }     
       );
 
       if (!data.success) {
@@ -87,8 +87,8 @@ const updateQuentity = async (itemId,size,quantity)=>{
     try {
       const { data } = await axios.post(
         backendUrl + "/cart/update",
-        { itemId, size, quantity },   // ✅ userId will be added by authUser
-        { headers: { token } }        // ✅ send token
+        { itemId, size, quantity },   
+        { headers: { token } }       
       );
 
       if (!data.success) {
@@ -152,7 +152,7 @@ const getUserCart = async (token) => {
 
 
   useEffect(() => {
-    getProductData(); // fetch once on mount
+    getProductData();
   }, []);
 
   useEffect(()=>{
